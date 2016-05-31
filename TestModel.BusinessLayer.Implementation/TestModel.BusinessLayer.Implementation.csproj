@@ -54,6 +54,14 @@
       <Project>{1adb481f-88a0-4fe3-81d8-205f15552f87}</Project>
       <Name>TestModel.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestModel.DataAccess.Contracts\TestModel.DataAccess.Contracts.csproj">
+      <Project>{a36719a2-09dc-4c80-8e48-ea36a6b5aa5d}</Project>
+      <Name>TestModel.DataAccess.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestModel.DataAccess.Implementation.SqlDatabase\TestModel.DataAccess.Implementation.SqlDatabase.csproj">
+      <Project>{14cecccc-f396-4b5e-b265-4c2ff87bcb4e}</Project>
+      <Name>TestModel.DataAccess.Implementation.SqlDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

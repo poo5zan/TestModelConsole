@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
+using System.ComponentModel.Composition;
 
 
 namespace TestModel.Common
@@ -9,7 +10,7 @@ namespace TestModel.Common
     {
         private static CompositionContainer _container;
 
-        private static CompositionContainer Container { get { return _container; }
+        public static CompositionContainer Container { get { return _container; }
          }
 
         /// <summary>
@@ -19,6 +20,8 @@ namespace TestModel.Common
         public static void LoadMefContainer(AggregateCatalog catalog) {
 
             _container = Init(catalog.Catalogs);
+            //_container.ComposeParts(catalog);
+            
         }
 
         /// <summary>

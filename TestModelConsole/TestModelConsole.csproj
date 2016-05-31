@@ -82,10 +82,6 @@
       <Project>{a36719a2-09dc-4c80-8e48-ea36a6b5aa5d}</Project>
       <Name>TestModel.DataAccess.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestModel.DataAccess.Implementation.MongoDb\TestModel.DataAccess.Implementation.MongoDb.csproj">
-      <Project>{6c833c53-dfd1-4b3f-8609-745e7d1697d9}</Project>
-      <Name>TestModel.DataAccess.Implementation.MongoDb</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestModel.DataAccess.Implementation.SqlDatabase\TestModel.DataAccess.Implementation.SqlDatabase.csproj">
       <Project>{14cecccc-f396-4b5e-b265-4c2ff87bcb4e}</Project>
       <Name>TestModel.DataAccess.Implementation.SqlDatabase</Name>
