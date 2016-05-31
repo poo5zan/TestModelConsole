@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelConsole", "TestModelConsole\TestModelConsole.csproj", "{AFC3DB92-2EEA-43E0-8BE2-9510A0706300}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.DataAccess.Objects", "TestModel.DataAccess.Objects\TestModel.DataAccess.Objects.csproj", "{7C5CCF60-699E-48E4-BBD3-62EA3E6129AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.DataAccess.Implementation.SqlDatabase", "TestModel.DataAccess.Implementation.SqlDatabase\TestModel.DataAccess.Implementation.SqlDatabase.csproj", "{14CECCCC-F396-4B5E-B265-4C2FF87BCB4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelConsole.Test", "TestModelConsole.Test\TestModelConsole.Test.csproj", "{A7A04BDD-0B18-4B9A-8468-BA877272CA98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{14CECCCC-F396-4B5E-B265-4C2FF87BCB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CECCCC-F396-4B5E-B265-4C2FF87BCB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14CECCCC-F396-4B5E-B265-4C2FF87BCB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A04BDD-0B18-4B9A-8468-BA877272CA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A04BDD-0B18-4B9A-8468-BA877272CA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A04BDD-0B18-4B9A-8468-BA877272CA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A04BDD-0B18-4B9A-8468-BA877272CA98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

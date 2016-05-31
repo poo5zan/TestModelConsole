@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AttemptedQuestion.cs" />
     <Compile Include="IUserManagement.cs" />
+    <Compile Include="MyLinkedList.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
