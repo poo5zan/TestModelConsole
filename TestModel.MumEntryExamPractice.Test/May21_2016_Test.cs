@@ -116,7 +116,7 @@ namespace TestModel.MumEntryExamPractice.Test
 
             //invalid
             var result2 = may21_2016.IsMaxMinEqual(new int[] { 11, 4, 9, 11, 8, 5, 4, 10,11 });
-            Assert.AreEqual(result, 0);
+            Assert.AreEqual(result2, 0);
 
         }
 
