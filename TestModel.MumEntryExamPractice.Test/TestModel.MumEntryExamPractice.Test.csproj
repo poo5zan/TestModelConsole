@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7A04BDD-0B18-4B9A-8468-BA877272CA98}</ProjectGuid>
+    <ProjectGuid>{7CE066FD-2DE4-4639-A8C2-729B323F46E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestModelConsole.Test</RootNamespace>
-    <AssemblyName>TestModelConsole.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>TestModel.MumEntryExamPractice.Test</RootNamespace>
+    <AssemblyName>TestModel.MumEntryExamPractice.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -45,18 +45,21 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MyLinkedListTest.cs" />
+    <Compile Include="May21_2016_Test.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestModelConsole\TestModelConsole.csproj">
-      <Project>{afc3db92-2eea-43e0-8be2-9510a0706300}</Project>
-      <Name>TestModelConsole</Name>
+    <ProjectReference Include="..\TestModel.MumEntryExamPractice\TestModel.MumEntryExamPractice.csproj">
+      <Project>{f4f84273-03a0-40eb-9d44-72cb290f3c56}</Project>
+      <Name>TestModel.MumEntryExamPractice</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
