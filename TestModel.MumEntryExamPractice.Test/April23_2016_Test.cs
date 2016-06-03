@@ -33,5 +33,16 @@ namespace TestModel.MumEntryExamPractice.Test
             var result3 = april23_2016.Fill(new int[] { 2, 6, 9, 0, -3 },0,4);
             Assert.IsNull(result3);
         }
+
+        [TestMethod]
+        public void SumIsPower() {
+
+            var april23_Test = new April23_2016();
+            var result1 = april23_Test.SumIsPower(new int[] { 8, 8, 8, 8 });
+            Assert.AreEqual(true, result1);
+
+            var result2 = april23_Test.SumIsPower(new int[] { 8,8,8});
+            Assert.AreEqual(false, result2);
+        }
     }
 }

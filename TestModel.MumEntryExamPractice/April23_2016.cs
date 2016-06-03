@@ -31,5 +31,28 @@ namespace TestModel.MumEntryExamPractice
             return arrayToReturn;
         }
 
+        public bool SumIsPower(int[] inputArray) {
+            int denominator = 2;
+            int numerator = 0;
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                numerator += inputArray[i];
+            }
+
+            while (numerator > 2) {
+                numerator = numerator / denominator;
+            }
+            if (numerator == denominator)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
