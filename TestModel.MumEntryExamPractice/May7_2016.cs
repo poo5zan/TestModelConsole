@@ -61,17 +61,29 @@ namespace TestModel.MumEntryExamPractice
         public int GoodSpread(int[] inputArray) {
             int Valid = 1;
             int InValid = 0;
+            int CountOfOccurrenceOfElement = 0;
 
             //limited elements to check
             if (inputArray.Length < 4) {
                 return Valid;
             }
-
-            for (int i = 0, j = 1, k = 2, l = 3; i < inputArray.Length; i++)
+            for (int i = 0; i < inputArray.Length; i++)
             {
-                if
-            }
+                for (int j = 0; j < inputArray.Length; j++)
+                {
+                    if (inputArray[i] == inputArray[j])
+                    {
+                        CountOfOccurrenceOfElement++;
+                    }
+                    if (CountOfOccurrenceOfElement > 3)
+                    {
+                        return InValid;
+                    }
+                }
 
+                CountOfOccurrenceOfElement = 0;
+
+            }
 
             return Valid;
         }

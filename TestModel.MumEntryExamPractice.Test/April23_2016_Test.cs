@@ -44,5 +44,25 @@ namespace TestModel.MumEntryExamPractice.Test
             var result2 = april23_Test.SumIsPower(new int[] { 8,8,8});
             Assert.AreEqual(false, result2);
         }
+
+        [TestMethod]
+        public void IsHollow() {
+            var april23_2016 = new April23_2016();
+
+            var result1 = april23_2016.IsHollow(new int[] { 1, 2, 4, 0, 0, 0, 3, 4, 5 });
+            Assert.AreEqual(true, result1);
+
+            var result11 = april23_2016.IsHollow(new int[] { 1, 2, 4, 0, 1, 0,0, 3, 4, 5 });
+            Assert.AreEqual(false, result11);
+
+            var result2 = april23_2016.IsHollow(new int[] { 1, 2, 0, 0, 0, 3, 4, 5 });
+            Assert.AreEqual(false, result2);
+
+            var result3 = april23_2016.IsHollow(new int[] { 1, 2, 4, 9, 0, 0, 0, 3, 4, 5 });
+            Assert.AreEqual(false, result3);
+
+            var result4 = april23_2016.IsHollow(new int[] { 1, 2, 0, 0, 3, 4 });
+            Assert.AreEqual(false, result4);
+        }
     }
 }

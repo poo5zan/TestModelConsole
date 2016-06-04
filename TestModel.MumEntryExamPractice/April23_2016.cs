@@ -53,6 +53,77 @@ namespace TestModel.MumEntryExamPractice
             }
         }
 
+        public bool IsHollow(int[] inputArray) {
+            int countZero = 0;
+            int firstZeroIndex = 0;
+            int LastZeroIndex = 0;
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                if (inputArray[i] == 0)
+                {
+                    if (firstZeroIndex == 0)
+                    {
+                        firstZeroIndex = i;
+                    }
+                    countZero++;
+                    //there is element in between zero
+                    if (LastZeroIndex != 0)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (firstZeroIndex != 0)
+                    {
+                        LastZeroIndex = i;
+                    }
+                }
+
+            }
+
+            if (countZero < 3) { return false; }
+
+            int _CountLeft = 0;
+            int _CountRight = 0;
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                if (inputArray[i] == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    _CountLeft++;
+                }
+            }
+
+            for (int j = inputArray.Length-1; j >= 0; j--)
+            {
+                if (inputArray[j] == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    _CountRight++;
+                }
+            }
+
+            if (_CountLeft != _CountRight) { return false; }
+            //count non zero
+            //for (int i = 0, j = inputArray.Length-1; i < inputArray.Length; i++,j--)
+            //{
+            //    if (inputArray[i] == 0 || inputArray[j] == 0)
+            //    {
+            //        return false;
+            //    }   
+            //}
+
+            return true;
+        }
 
     }
 }
