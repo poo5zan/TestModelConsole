@@ -11,7 +11,7 @@ namespace TestModel.MumEntryExamPractice.Test
         [TestMethod]
         public void GetExponent_should_return_its_largest_exponent() {
 
-            var may21_2016 = new May21_2016();
+            var may21_2016 = new March26_2016(); //new May21_2016();
 
            // var result_162_3 = new May21_2016().GetExponent(162, 3);
 
@@ -34,7 +34,7 @@ namespace TestModel.MumEntryExamPractice.Test
         [TestMethod]
         public void Is121Array_should_validate_121_array() {
 
-            var _may21_2016 = new May21_2016();
+            var _may21_2016 = new March26_2016(); //new May21_2016();
 
             //Valid:1
             //Invalid:0

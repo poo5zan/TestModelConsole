@@ -16,6 +16,7 @@ namespace TestModel.MumEntryExamPractice
         /// <returns></returns>
         public int GetExponent(int n, int p)
         {
+            //refer march21 for updated answer
             if (p <= 1) { return -1; }
 
             int exponent = 1;
