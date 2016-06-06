@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="April23_2016_Test.cs" />
     <Compile Include="April9_2016_Test.cs" />
+    <Compile Include="March12_2016_Test.cs" />
     <Compile Include="March26_2016_Test.cs" />
     <Compile Include="May21_2016_Test.cs" />
     <Compile Include="May7_2016_Test.cs" />
