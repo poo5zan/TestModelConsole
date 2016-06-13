@@ -64,6 +64,7 @@
     <Compile Include="March26_2016_Test.cs" />
     <Compile Include="May21_2016_Test.cs" />
     <Compile Include="May7_2016_Test.cs" />
+    <Compile Include="Nov21_2015_Test.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

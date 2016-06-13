@@ -53,6 +53,7 @@
     <Compile Include="March26_2016.cs" />
     <Compile Include="May21_2016.cs" />
     <Compile Include="May7_2016.cs" />
+    <Compile Include="Nov21_2015.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
