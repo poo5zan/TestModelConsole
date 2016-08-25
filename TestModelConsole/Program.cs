@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using TestModel.BusinessLayer;
 using TestModel.BusinessLayer.Contracts;
 using TestModel.BusinessLayer.Implementation;
@@ -18,37 +20,131 @@ using TestModel.DataAccess.Objects;
 namespace TestModelConsole
 {
     class Program
-    { 
+    {
         static IUserManagement _iuser;
         [Import]
         public static IUserManagement UserMgmt { get; set; }
 
+
         static void Main(string[] args)
         {
+            string json = @"{
+  'Name': 'Bad Boys',
+  'ReleaseDate': '1995-4-7T00:00:00',
+  'Id':6,
+'ArkoId':3.214,
+  'Genres': [
+    'Action',
+    'Comedy'
+  ]
+}";
+
+            //Object oj = JsonConvert.DeserializeObject<Object>(json);
+            //var jobj = oj as JObject;
+            //foreach (var j in jobj.Properties())
+            //{
+            //    Console.WriteLine("Key=" + j.Name);
+            //    Console.WriteLine("Value="+j.Value);
+            //    Console.WriteLine("ValueType="+j.Value.Type);
+            //}
+
+
+            var user = new User();
+            user.Name = "Pujan";
+            user.Id = 4;
+            user.Roles = new List<string>() {"Admin","User","SuperAdmin"};
+            user.UserType = UserType.Candidate;
+            user.AttemptedQuestions = new List<AttemptedQuestion>()
+            {
+                new AttemptedQuestion()
+                {
+                    //ApplicationStatus = ApplicationStatus.Completed,
+                    QuestionCategory = "Science",
+                    QuestionId = 23,
+                    WorkFlowId = "256",
+                    QuestionAnswers = new List<CandidateQuestionAnswer>()
+                    {
+                        new CandidateQuestionAnswer()
+                        {
+                            AttemptedQuestionId = 12,
+                            Question = "What's your name",
+                            CorrectAnswer = "Haha",
+                            AnswerOptions = new List<string>() { "Haha","Jaja"},
+                            UserEnteredAnswer = "Jaja"
+                        }
+                    }
+                },
+                new AttemptedQuestion()
+                {
+                    //ApplicationStatus = ApplicationStatus.Completed,
+                    QuestionCategory = "IT",
+                    QuestionId = 233,
+                    WorkFlowId = "2",
+                    QuestionAnswers = new List<CandidateQuestionAnswer>()
+                    {
+                        new CandidateQuestionAnswer()
+                        {
+                            AttemptedQuestionId = 132,
+                            Question = "Do you want to build snowman?",
+                            CorrectAnswer = "Yes",
+                            AnswerOptions = new List<string>() { "Yes","No"},
+                            UserEnteredAnswer = "Yes"
+                        }
+                    }
+                }
+            };
+
+            var userJson = JsonConvert.SerializeObject(user);
+
+            var nest0Object = JsonConvert.DeserializeObject<Object>(userJson);
+            var nest0JObject = nest0Object as JObject;
+            JsonHelper.GetJObjectKeyValue(nest0JObject,"RootObject");
+            //foreach (var uj in nest0JObject.Properties())
+            //{
+            //    Console.WriteLine("Nest 0--------");
+            //    Console.WriteLine("Key="+uj.Name);
+            //    Console.WriteLine("Value="+uj.Value);
+            //    Console.WriteLine("ValueType="+uj.Value.Type);
+            //    if (uj.Value.Type == JTokenType.Array)
+            //    {
+            //        var nest0Array = uj.Value as JArray;
+
+            //        foreach (var nest1JObject in nest0Array.Children<JObject>())
+            //        {
+            //            Console.WriteLine("Nest 1--------");
+            //            foreach (var nest1JProperty in nest1JObject.Properties())
+            //            {
+            //                Console.WriteLine(nest1JProperty.Name);
+            //                Console.WriteLine(nest1JProperty.Value);
+            //                Console.WriteLine(nest1JProperty.Value.Type);
+            //            }
+            //        }
+            //    }
+            //}
+
+            var u = 0;
+            //string name = m.Name;
+            // Bad Boys
+
+            //    new Program().Initialize();
+
+            //    var u = UserMgmt;
+
+            //    new UserManagement().CreateUser("a");
+
+            //    new UserManagementBusinessLayer().CreateUserBusinessLayer("fda");
+
+            //// new RestaurantsDataAccess().CreateRestaurant();       
+
+            //    var rest = new RestaurantDto();
+            //    rest.Address = new Address();
 
 
 
-
-
-        //    new Program().Initialize();
-
-        //    var u = UserMgmt;
-
-        //    new UserManagement().CreateUser("a");
-
-        //    new UserManagementBusinessLayer().CreateUserBusinessLayer("fda");
-
-        //// new RestaurantsDataAccess().CreateRestaurant();       
-
-        //    var rest = new RestaurantDto();
-        //    rest.Address = new Address();
-
-
-
-        //    //List<PropertyInfo> addressProperties = rest.Address.GetType().GetProperties().ToList<PropertyInfo>();
-        //    var cor = new List<double>();
-        //    cor.Add(45.4);
-        //    cor.Add(34.56);
+            //    //List<PropertyInfo> addressProperties = rest.Address.GetType().GetProperties().ToList<PropertyInfo>();
+            //    var cor = new List<double>();
+            //    cor.Add(45.4);
+            //    cor.Add(34.56);
 
             //new RestaurantsDataAccess().CreateRestaurant(new RestaurantDto
             //{
@@ -108,7 +204,7 @@ namespace TestModelConsole
             //var _is = _iuser;
             //var pe = new Person(null);
             //pe.CUser("");         
-            
+
             //var i = _userManagement.CreateUser("");
             //Console.WriteLine(i);
             Console.ReadLine();
@@ -135,9 +231,7 @@ namespace TestModelConsole
             ////   // Console.ReadLine();
             ////}
         }
-
-
-
+        
         public void Initialize()
         {
             var catalog = new AggregateCatalog();
@@ -155,6 +249,9 @@ namespace TestModelConsole
 
         }
     }
+
+
+
 
     class Mobile
     {
@@ -199,7 +296,8 @@ namespace TestModelConsole
         {
             get
             {
-                if (GetTelecom() == TelecomEnum.Ncell) {
+                if (GetTelecom() == TelecomEnum.Ncell)
+                {
                     return true;
                 }
                 return false;

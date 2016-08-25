@@ -19,16 +19,11 @@ namespace TestModule.Logging
         private static string DefaultFilePath = @"C:\AppLogs\appLog";
         private static List<string> _defaultDotnetTypes;
 
+        public string LogPath { get; set; }
 
-        public string DefaultPattern => LogPattern;
+        private string DefaultPattern => LogPattern;
 
-        //public LoggingService()
-        //{
-        //    _layout.ConversionPattern = DefaultPattern;
-        //    _layout.ActivateOptions();
-        //}
-
-        public PatternLayout DefaultLayout => _layout;
+        private PatternLayout DefaultLayout => _layout;
 
         public void AddAppender(IAppender appender)
         {
@@ -36,8 +31,20 @@ namespace TestModule.Logging
             hierarchy.Root.AddAppender(appender);
         }
 
-        public LoggingService(string filePathToSaveLog = "")
+        public LoggingService()
         {
+            _layout.ConversionPattern = DefaultPattern;
+            _layout.ActivateOptions();
+
+            LoadDefaultDotNetTypes();
+        }
+
+        //public LoggingService(string filePathToSaveLog = "")
+        static LoggingService()
+        {
+
+            string filePathToSaveLog = "";
+
             PatternLayout patternLayout = new PatternLayout();
             patternLayout.ConversionPattern = LogPattern;
             // patternLayout.Header = "[Header]\\r\\n";
@@ -54,27 +61,23 @@ namespace TestModule.Logging
             RollingFileAppender roller = new RollingFileAppender();
             //roller.LockingModel = 
             roller.File = string.IsNullOrWhiteSpace(filePathToSaveLog) ? DefaultFilePath : filePathToSaveLog;
-            roller.AppendToFile = true;
-            roller.DatePattern = ".yyyyMMdd.lo\\g";
+            //roller.AppendToFile = true;
+            roller.DatePattern = ".yyyy-MM-dd.\\l\\o\\g";
             roller.RollingStyle = RollingFileAppender.RollingMode.Date;
             roller.StaticLogFileName = false;
             roller.Layout = patternLayout;
-            roller.AppendToFile = true;
+            roller.PreserveLogFileNameExtension = true;
+
             roller.ActivateOptions();
+
             hierarchy.Root.AddAppender(roller);
 
             hierarchy.Root.Level = Level.All;
             hierarchy.Configured = true;
-
-            _layout.ConversionPattern = DefaultPattern;
-            _layout.ActivateOptions();
-
-            LoadDefaultDotNetTypes();
-
         }
 
 
-        public static ILog Create(Type type = null)
+        public ILog Create(Type type = null)
         {
             if (type != null)
             {
@@ -107,11 +110,9 @@ namespace TestModule.Logging
             if (writeAllObjectProperties &&
                 !_defaultDotnetTypes.Contains(message.GetType().Name))
             {
-                //if(message.GetType().Name)
-                
                 List<PropertyInfo> propertyInfos =
                     message.GetType().GetProperties().ToList<PropertyInfo>();
-                
+
                 foreach (PropertyInfo propertyInfo in propertyInfos)
                 {
                     stringBuilder.Append(propertyInfo.Name);
@@ -154,7 +155,7 @@ namespace TestModule.Logging
             {
                 _defaultDotnetTypes = new List<string>() {"String","Int32",
                     "Int64","Decimal","Double" };
-                
+
             }
 
         }

@@ -19,7 +19,7 @@ namespace TestModule.Logging.Tests
                 Directory.Delete(directoryPath,true);
             }
 
-            ILoggingService loggingService = new LoggingService(filePath);
+            ILoggingService loggingService = new LoggingService();
 
             loggingService.Write(new ObjectToWriteInLog()
             {
@@ -40,6 +40,20 @@ namespace TestModule.Logging.Tests
             loggingService.Write("me", LogLevel.Debug, typeof(LoggingServiceTests));
             loggingService.Write(123, LogLevel.Debug, typeof(LoggingServiceTests));
             loggingService.Write(34.34, LogLevel.Error, typeof(LoggingServiceTests));
+        }
+
+
+        [TestMethod]
+        public void LoggerServiceInstanceWithFilePathTest()
+        {
+            string path1 = @"C:\TestLogPath\path1";
+            var inst1 = new LoggingService();
+            string path2 = @"C:\TestLogPath\path2";
+            var inst2 = new LoggingService();
+
+            inst1.Write("This should go to Path1");
+            inst2.Write("This should go to Path 2");
+
         }
 
         public class ObjectToWriteInLog
