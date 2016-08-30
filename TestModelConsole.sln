@@ -51,6 +51,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpringDotNet", "SpringDotNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.DataAccess.Implementation.Mongodb.Tests", "TestModel.DataAccess.Implementation.Mongodb.Tests\TestModel.DataAccess.Implementation.Mongodb.Tests.csproj", "{1DFB9292-6373-463A-A4AC-3330B7B90C70}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{43A2D298-9021-4D46-9A95-17C301DEB080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.Web", "TestModel.Web\TestModel.Web.csproj", "{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,10 @@ Global
 		{1DFB9292-6373-463A-A4AC-3330B7B90C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DFB9292-6373-463A-A4AC-3330B7B90C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DFB9292-6373-463A-A4AC-3330B7B90C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,5 +157,6 @@ Global
 		{3BE3314F-51A3-43F3-BEE8-416254FC010A} = {68EA37F7-9A59-466E-99BC-0F285CF9A7C7}
 		{6D6A8E06-B415-4D86-A4FA-97DFC491AB66} = {08039042-4826-4B16-8130-01941EF88E5E}
 		{1DFB9292-6373-463A-A4AC-3330B7B90C70} = {08039042-4826-4B16-8130-01941EF88E5E}
+		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437} = {43A2D298-9021-4D46-9A95-17C301DEB080}
 	EndGlobalSection
 EndGlobal
