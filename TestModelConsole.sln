@@ -53,7 +53,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.DataAccess.Implem
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{43A2D298-9021-4D46-9A95-17C301DEB080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.Web", "TestModel.Web\TestModel.Web.csproj", "{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelWeb", "TestModel.Web\TestModelWeb.csproj", "{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
