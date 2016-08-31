@@ -13,6 +13,6 @@ namespace TestModel.Web.Controllers
             ViewBag.Title = "Home Page";
 
             return View();
-        }
+        //}
     }
 }
