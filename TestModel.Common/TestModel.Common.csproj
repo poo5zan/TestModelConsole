@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationStatus.cs" />
+    <Compile Include="FileSplitter.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MefContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

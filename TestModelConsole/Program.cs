@@ -21,6 +21,9 @@ namespace TestModelConsole
 {
     class Program
     {
+
+       
+
         static IUserManagement _iuser;
         [Import]
         public static IUserManagement UserMgmt { get; set; }
@@ -28,77 +31,92 @@ namespace TestModelConsole
 
         static void Main(string[] args)
         {
-            string json = @"{
-  'Name': 'Bad Boys',
-  'ReleaseDate': '1995-4-7T00:00:00',
-  'Id':6,
-'ArkoId':3.214,
-  'Genres': [
-    'Action',
-    'Comedy'
-  ]
-}";
-
-            //Object oj = JsonConvert.DeserializeObject<Object>(json);
-            //var jobj = oj as JObject;
-            //foreach (var j in jobj.Properties())
-            //{
-            //    Console.WriteLine("Key=" + j.Name);
-            //    Console.WriteLine("Value="+j.Value);
-            //    Console.WriteLine("ValueType="+j.Value.Type);
-            //}
 
 
-            var user = new User();
-            user.Name = "Pujan";
-            user.Id = 4;
-            user.Roles = new List<string>() {"Admin","User","SuperAdmin"};
-            user.UserType = UserType.Candidate;
-            user.AttemptedQuestions = new List<AttemptedQuestion>()
-            {
-                new AttemptedQuestion()
-                {
-                    //ApplicationStatus = ApplicationStatus.Completed,
-                    QuestionCategory = "Science",
-                    QuestionId = 23,
-                    WorkFlowId = "256",
-                    QuestionAnswers = new List<CandidateQuestionAnswer>()
-                    {
-                        new CandidateQuestionAnswer()
-                        {
-                            AttemptedQuestionId = 12,
-                            Question = "What's your name",
-                            CorrectAnswer = "Haha",
-                            AnswerOptions = new List<string>() { "Haha","Jaja"},
-                            UserEnteredAnswer = "Jaja"
-                        }
-                    }
-                },
-                new AttemptedQuestion()
-                {
-                    //ApplicationStatus = ApplicationStatus.Completed,
-                    QuestionCategory = "IT",
-                    QuestionId = 233,
-                    WorkFlowId = "2",
-                    QuestionAnswers = new List<CandidateQuestionAnswer>()
-                    {
-                        new CandidateQuestionAnswer()
-                        {
-                            AttemptedQuestionId = 132,
-                            Question = "Do you want to build snowman?",
-                            CorrectAnswer = "Yes",
-                            AnswerOptions = new List<string>() { "Yes","No"},
-                            UserEnteredAnswer = "Yes"
-                        }
-                    }
-                }
-            };
 
-            var userJson = JsonConvert.SerializeObject(user);
+//            var rev = new Reviewer();
 
-            var nest0Object = JsonConvert.DeserializeObject<Object>(userJson);
-            var nest0JObject = nest0Object as JObject;
-            JsonHelper.GetJObjectKeyValue(nest0JObject,"RootObject");
+//            var someDict = new Dictionary<string, object>();
+//            someDict.Add("one",1);
+//            someDict.Add("two","two");
+
+//            var someDictJson = JsonConvert.SerializeObject(someDict);
+            
+
+
+//            string json = @"{
+//  'Name': 'Bad Boys',
+//  'ReleaseDate': '1995-4-7T00:00:00',
+//  'Id':6,
+//'ArkoId':3.214,
+//  'Genres': [
+//    'Action',
+//    'Comedy'
+//  ]
+//}";
+
+//            //Object oj = JsonConvert.DeserializeObject<Object>(json);
+//            //var jobj = oj as JObject;
+//            //foreach (var j in jobj.Properties())
+//            //{
+//            //    Console.WriteLine("Key=" + j.Name);
+//            //    Console.WriteLine("Value="+j.Value);
+//            //    Console.WriteLine("ValueType="+j.Value.Type);
+//            //}
+
+
+//            var user = new User();
+//            user.Name = "Pujan";
+//            user.Id = 4;
+//            user.Roles = new List<string>() {"Admin","User","SuperAdmin"};
+//            user.UserType = UserType.Candidate;
+//            user.AttemptedQuestions = new List<AttemptedQuestion>()
+//            {
+//                new AttemptedQuestion()
+//                {
+//                    //ApplicationStatus = ApplicationStatus.Completed,
+//                    QuestionCategory = "Science",
+//                    QuestionId = 23,
+//                    WorkFlowId = "256",
+//                    QuestionAnswers = new List<CandidateQuestionAnswer>()
+//                    {
+//                        new CandidateQuestionAnswer()
+//                        {
+//                            AttemptedQuestionId = 12,
+//                            Question = "What's your name",
+//                            CorrectAnswer = "Haha",
+//                            AnswerOptions = new List<string>() { "Haha","Jaja"},
+//                            UserEnteredAnswer = "Jaja"
+//                        }
+//                    }
+//                },
+//                new AttemptedQuestion()
+//                {
+//                    //ApplicationStatus = ApplicationStatus.Completed,
+//                    QuestionCategory = "IT",
+//                    QuestionId = 233,
+//                    WorkFlowId = "2",
+//                    QuestionAnswers = new List<CandidateQuestionAnswer>()
+//                    {
+//                        new CandidateQuestionAnswer()
+//                        {
+//                            AttemptedQuestionId = 132,
+//                            Question = "Do you want to build snowman?",
+//                            CorrectAnswer = "Yes",
+//                            AnswerOptions = new List<string>() { "Yes","No"},
+//                            UserEnteredAnswer = "Yes"
+//                        }
+//                    }
+//                }
+//            };
+
+//            var userJson = JsonConvert.SerializeObject(user);
+
+//            var nest0Object = JsonConvert.DeserializeObject<Object>(userJson);
+//            var nest0JObject = nest0Object as JObject;
+//            JsonHelper.GetJObjectKeyValue(nest0JObject,"RootObject");
+
+
             //foreach (var uj in nest0JObject.Properties())
             //{
             //    Console.WriteLine("Nest 0--------");
