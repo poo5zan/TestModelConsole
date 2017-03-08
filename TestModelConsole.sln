@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelWeb", "TestModel.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.Common.Tests", "TestModel.Common.Tests\TestModel.Common.Tests.csproj", "{85313F22-EFDD-408E-903B-080F1CB1B018}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleMerchant", "GoogleMerchant", "{3BD9B689-0749-4C0E-A257-C2A4B6794C8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -49,6 +49,7 @@
     <Compile Include="FileSplitter.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MefContainer.cs" />
+    <Compile Include="MyXmlParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertySupport.cs" />
     <Compile Include="SimpleMapper.cs" />
