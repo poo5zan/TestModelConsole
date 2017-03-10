@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationStatus.cs" />
+    <Compile Include="FeatureExtraction.cs" />
     <Compile Include="FileSplitter.cs" />
+    <Compile Include="FuzzyMatcher.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MefContainer.cs" />
     <Compile Include="MyXmlParser.cs" />

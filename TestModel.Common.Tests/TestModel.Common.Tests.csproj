@@ -53,7 +53,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FeatureExtractionTests.cs" />
     <Compile Include="FileSplitterTests.cs" />
+    <Compile Include="FuzzyMatcherTests.cs" />
     <Compile Include="MyXmlParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
