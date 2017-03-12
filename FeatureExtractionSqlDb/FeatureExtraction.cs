@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
-namespace TestModel.Common
+namespace FeatureExtractionSqlDb
 {
     public class FeatureExtraction
     {
@@ -19,7 +16,7 @@ namespace TestModel.Common
         /// <param name="returnRecordSize">zero = all</param>
         /// <param name="keyword">keyword to assist lookup</param>
         /// <param name="separator">separator to combine result</param>
-        /// <param name="isPositionLeft">position</param>
+        /// <param name="isPositionLeft">position to look word for</param>
         /// <returns>subtext</returns>
         public string Extract(string inputText, string validValues,
             int matchLimit = 1, int returnRecordSize = 0,
@@ -30,26 +27,32 @@ namespace TestModel.Common
             var validValuesOriginal = validValues;
             var validValuesOrigArray = validValuesOriginal.Split(',');
             HashSet<string> validValuesOrigHashSet = new HashSet<string>(validValuesOrigArray);
-            inputText = inputText.ToLower();
-            validValues = validValues.ToLower();
-            var validValuesArray = validValues.Split(',');
-            HashSet<string> validValuesHashSet = new HashSet<string>(validValuesArray);
-            string matchedWord = "";
 
-            //if keyword provided
+            
+
+            //if we have keyword mentioned, then work on it
             if (!String.IsNullOrWhiteSpace(keyword))
             {
                 var wordAroundKeyword = GetWordAroundKeyword(inputText, keyword, isPositionLeft);
+                //if words found, then replace the input text
+                if (!String.IsNullOrWhiteSpace(wordAroundKeyword))
+                {
+                    inputText = wordAroundKeyword;
+                }
             }
-            
+
+            inputText = inputText.ToLower();
+            validValues = validValues.ToLower();
+            string matchedWord = "";
+
+            var validValuesArray = validValues.Split(',');
+            HashSet<string> validValuesHashSet = new HashSet<string>(validValuesArray);
             //Scenario 1: exact match
-            //matchedWord = validValuesHashSet.Contains(inputText) ? inputText : "";
-            matchedWord = GetExactMatch(inputText, validValuesHashSet);
-            //if (!String.IsNullOrWhiteSpace(matchedWord))
-            //{
-            //    return validValuesOrigHashSet.FirstOrDefault(x => x.ToLower() == matchedWord);
-            //}
-            matchedWord = GetValidValuesOrig(matchedWord, validValuesOrigHashSet);
+            matchedWord = validValuesHashSet.Contains(inputText) ? inputText : "";
+            if (!String.IsNullOrWhiteSpace(matchedWord))
+            {
+                return validValuesOrigHashSet.FirstOrDefault(x => x.ToLower() == matchedWord);
+            }
 
             //Scenario 2: source contains list of valid values
             var matchedWords = validValuesHashSet.Where(inputText.Contains).ToList();
@@ -126,9 +129,18 @@ namespace TestModel.Common
 
         }
 
+        public class LookupTable
+        {
+            public string SourceValue { get; set; }
+            public string SourceValueSplitted { get; set; }
+            public string LookupWith { get; set; }
+            public string LookupValue { get; set; }
+            public int Match { get; set; }
+
+        }
 
         private string GetWordAroundKeyword(string sourceText, string keyword
-            , bool isPositionLeft)
+           , bool isPositionLeft)
         {
             var indexOfKeyword = sourceText.IndexOf(keyword, StringComparison.Ordinal);
             if (isPositionLeft)
@@ -146,30 +158,5 @@ namespace TestModel.Common
                 return removeSpecialCharacterExceptSpace.Substring(0, removeSpecialCharacterExceptSpace.IndexOf(' '));
             }
         }
-
-        private string GetExactMatch(string source, HashSet<string> validVaues)
-        {
-            return validVaues.Contains(source) ? source : "";
-        }
-
-        private string GetValidValuesOrig(string value,HashSet<string> valuesOrig)
-        {
-            if (String.IsNullOrWhiteSpace(value))
-            {
-                return "";
-            }
-            return valuesOrig.FirstOrDefault(x => x.ToLower() == value);
-        }
-
-        public class LookupTable
-        {
-            public string SourceValue { get; set; }
-            public string SourceValueSplitted { get; set; }
-            public string LookupWith { get; set; }
-            public string LookupValue { get; set; }
-            public int Match { get; set; }
-
-        }
-
     }
 }
