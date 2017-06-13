@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelConsole", "TestModelConsole\TestModelConsole.csproj", "{AFC3DB92-2EEA-43E0-8BE2-9510A0706300}"
 EndProject
@@ -64,6 +64,10 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FeatureExtractionSqlDb", "FeatureExtractionSqlDb\FeatureExtractionSqlDb.sqlproj", "{E52F195C-B63E-4A02-A56A-19C332DFD3C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureExtractionSqlDbTests", "FeatureExtractionSqlDbTests\FeatureExtractionSqlDbTests.csproj", "{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiTests", "ApiTests", "{1486F2B6-6393-4E59-AB26-A99352B375DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiShopifyTests", "ApiShopify\ApiShopifyTests.csproj", "{481C424F-8A1E-4AA2-A674-DB03DFB81F91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +165,10 @@ Global
 		{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481C424F-8A1E-4AA2-A674-DB03DFB81F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481C424F-8A1E-4AA2-A674-DB03DFB81F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481C424F-8A1E-4AA2-A674-DB03DFB81F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481C424F-8A1E-4AA2-A674-DB03DFB81F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,5 +192,6 @@ Global
 		{FAEC0B50-F6B2-49C6-81DB-A88AF1D59437} = {43A2D298-9021-4D46-9A95-17C301DEB080}
 		{E52F195C-B63E-4A02-A56A-19C332DFD3C9} = {E167F872-42D6-434F-997B-92CFE4DE0EF6}
 		{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9} = {E167F872-42D6-434F-997B-92CFE4DE0EF6}
+		{481C424F-8A1E-4AA2-A674-DB03DFB81F91} = {1486F2B6-6393-4E59-AB26-A99352B375DC}
 	EndGlobalSection
 EndGlobal

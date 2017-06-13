@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttemptedQuestion.cs" />
+    <Compile Include="DownloadFiles.cs" />
     <Compile Include="IUserManagement.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="Person.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="QuestionAnswerBase.cs" />
     <Compile Include="Reviewer.cs" />
     <Compile Include="ReviewerQuestionAnswer.cs" />
+    <Compile Include="ShopifyApi.cs" />
     <Compile Include="SurveyQuestionAnswer.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManagement.cs" />

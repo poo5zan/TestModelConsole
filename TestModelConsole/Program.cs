@@ -20,9 +20,7 @@ using TestModel.DataAccess.Objects;
 namespace TestModelConsole
 {
     class Program
-    {
-
-       
+    {      
 
         static IUserManagement _iuser;
         [Import]
@@ -33,6 +31,7 @@ namespace TestModelConsole
         {
 
             Console.WriteLine("hello pujan");
+            new DownloadFiles().DownloadAllFiles();
 
 //            var rev = new Reviewer();
 
