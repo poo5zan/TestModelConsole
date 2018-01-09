@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.9.1.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorksCsvReader.3.9.1\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -61,6 +64,7 @@
     <Compile Include="Reviewer.cs" />
     <Compile Include="ReviewerQuestionAnswer.cs" />
     <Compile Include="ShopifyApi.cs" />
+    <Compile Include="SqlBulkCopyTrial.cs" />
     <Compile Include="SurveyQuestionAnswer.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManagement.cs" />
