@@ -23,66 +23,81 @@ namespace TestModelConsole
                 
         static void Main(string[] args)
         {
-            Initialize();
 
-           // new RestaurantsDataAccess().CreateRestaurant();       
+           Console.WriteLine( IsNumberPalindrome(1));
+            //Console.WriteLine(IsNumberPalindrome(21));
+            //Console.WriteLine(IsNumberPalindrome(130));
+            //Console.WriteLine(IsNumberPalindrome(222));
 
-            var rest = new RestaurantDto();
-            rest.Address = new Address();
+            //Console.WriteLine(IsStringPalindrome("pujan"));
+            //Console.WriteLine(IsStringPalindrome("noon"));
+            //Console.WriteLine(IsStringPalindrome("madam"));
+            //Console.WriteLine(IsStringPalindrome("haha"));
+
+            //FindGreatest(3,6,9,2);
+            //FindGreatest(5, 3);
 
 
+           // Initialize();
 
-            //List<PropertyInfo> addressProperties = rest.Address.GetType().GetProperties().ToList<PropertyInfo>();
-            var cor = new List<double>();
-            cor.Add(45.4);
-            cor.Add(34.56);
+           //// new RestaurantsDataAccess().CreateRestaurant();       
 
-            new RestaurantsDataAccess().CreateRestaurant(new RestaurantDto
-            {
-                Name = "pujanm",
-                Price = 89,
-                Address = new Address
-                {
-                    Building = "PujanBuilding",
-                    CoOrdinates = cor,
-                    Street = "street-pujan",
-                    Grade = new Grade() {
-                        Date = DateTime.Now,
-                        GradeType = "P",
-                        Score = 90
-                    }
-                },
-                Grades = new List<Grade>() {
-                    new Grade {
-                        Date = DateTime.Now,
-                        GradeType = "A",
-                        Score = 66
-                    },
-                    new Grade {
-                        Date = DateTime.Now.AddDays(-1),
-                        GradeType = "A+",
-                        Score = 100
-                    }
-                },
-                ListDouble = new List<double>() { 78,89.098,56.23 },
-                ListString = new List<string>() { "one","two","three"},
-                ObjectList = new List<object>() { 89.33,"haha",98,"i am good"}
-            });
-            //var usr = new User();
-            //retrieve property name
-            // string propertyName = PropertySupport.ExtractPropertyName(() => usr.Email);
-            // Console.WriteLine();
+           // var rest = new RestaurantDto();
+           // rest.Address = new Address();
 
 
 
-            //new MongoDbConnectionHelper().ConnectDatabase();
+           // //List<PropertyInfo> addressProperties = rest.Address.GetType().GetProperties().ToList<PropertyInfo>();
+           // var cor = new List<double>();
+           // cor.Add(45.4);
+           // cor.Add(34.56);
 
-            //get user data access
-            //var userDataAccess = MefContainer.GetImplementationObjects<IUserDataAccess>();
+           // new RestaurantsDataAccess().CreateRestaurant(new RestaurantDto
+           // {
+           //     Name = "pujanm",
+           //     Price = 89,
+           //     Address = new Address
+           //     {
+           //         Building = "PujanBuilding",
+           //         CoOrdinates = cor,
+           //         Street = "street-pujan",
+           //         Grade = new Grade() {
+           //             Date = DateTime.Now,
+           //             GradeType = "P",
+           //             Score = 90
+           //         }
+           //     },
+           //     Grades = new List<Grade>() {
+           //         new Grade {
+           //             Date = DateTime.Now,
+           //             GradeType = "A",
+           //             Score = 66
+           //         },
+           //         new Grade {
+           //             Date = DateTime.Now.AddDays(-1),
+           //             GradeType = "A+",
+           //             Score = 100
+           //         }
+           //     },
+           //     ListDouble = new List<double>() { 78,89.098,56.23 },
+           //     ListString = new List<string>() { "one","two","three"},
+           //     ObjectList = new List<object>() { 89.33,"haha",98,"i am good"}
+           // });
+           // //var usr = new User();
+           // //retrieve property name
+           // // string propertyName = PropertySupport.ExtractPropertyName(() => usr.Email);
+           // // Console.WriteLine();
 
-            //var mongo = MefContainer.GetImplementationObject<IForMongoDb>();
-            //var sqldb = MefContainer.GetImplementationObject<IForSqlServer>();
-            var p = 0;
+
+
+           // //new MongoDbConnectionHelper().ConnectDatabase();
+
+           // //get user data access
+           // //var userDataAccess = MefContainer.GetImplementationObjects<IUserDataAccess>();
+
+           // //var mongo = MefContainer.GetImplementationObject<IForMongoDb>();
+           // //var sqldb = MefContainer.GetImplementationObject<IForSqlServer>();
+           // var p = 0;
 
             //var _userManagement = MefContainer.Container.GetExportedValue<IUserManagement>();
             //var _usrBusiness = MefContainer.Container.GetExportedValue<IUserManagementBusinessLayer>();
@@ -122,6 +137,62 @@ namespace TestModelConsole
             ////   // Console.ReadLine();
             ////}
         }
+
+        private static bool IsNumberPalindrome(long inputNumber)
+        {
+            bool isPalindrome = true;
+            if (inputNumber != ReverseNumber(inputNumber))
+            {
+                isPalindrome = false;
+            }
+            return isPalindrome;
+        }
+
+        private static long ReverseNumber(long inputNumber)
+        {
+            long returnValue = 0;
+            while (inputNumber != 0)
+            {
+                //get last digit
+                returnValue = (returnValue * 10) + (inputNumber % 10);
+                //drop the last digit from the number
+                inputNumber = inputNumber / 10;
+            }
+            
+            return returnValue;
+        }
+
+        private static bool IsStringPalindrome(string strInput)
+        {
+            //assign default value of true
+            bool isPalindrome = true;
+            //loop through string, looping just the half of the array will suffice
+            for(int i = 0, j = strInput.Length - 1; i < strInput.Length/2;i++,j--)
+            {
+                if (strInput[i] != strInput[j])
+                {
+                    isPalindrome = false;
+                    break;
+                }                
+            }
+            return isPalindrome;
+        }
+
+        static long FindGreatest(params long[] parameters)
+        {
+            long greatest = 0;
+            if (parameters.Count() == 0) { return 0; }
+            foreach (var p in parameters)
+            {
+                if (p > greatest)
+                {
+                    greatest = p;
+                }
+
+            }
+            return greatest;
+        }
+
 
         public static void Initialize()
         {
