@@ -33,9 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.9.1.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorksCsvReader.3.9.1\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttemptedQuestion.cs" />
+    <Compile Include="DownloadFiles.cs" />
     <Compile Include="IUserManagement.cs" />
+    <Compile Include="MyLinkedList.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +63,8 @@
     <Compile Include="QuestionAnswerBase.cs" />
     <Compile Include="Reviewer.cs" />
     <Compile Include="ReviewerQuestionAnswer.cs" />
+    <Compile Include="ShopifyApi.cs" />
+    <Compile Include="SqlBulkCopyTrial.cs" />
     <Compile Include="SurveyQuestionAnswer.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManagement.cs" />
@@ -60,6 +72,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestModel.BusinessLayer.Implementation\TestModel.BusinessLayer.Implementation.csproj">
@@ -81,10 +94,6 @@
     <ProjectReference Include="..\TestModel.DataAccess.Contracts\TestModel.DataAccess.Contracts.csproj">
       <Project>{a36719a2-09dc-4c80-8e48-ea36a6b5aa5d}</Project>
       <Name>TestModel.DataAccess.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestModel.DataAccess.Implementation.MongoDb\TestModel.DataAccess.Implementation.MongoDb.csproj">
-      <Project>{6c833c53-dfd1-4b3f-8609-745e7d1697d9}</Project>
-      <Name>TestModel.DataAccess.Implementation.MongoDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestModel.DataAccess.Implementation.SqlDatabase\TestModel.DataAccess.Implementation.SqlDatabase.csproj">
       <Project>{14cecccc-f396-4b5e-b265-4c2ff87bcb4e}</Project>

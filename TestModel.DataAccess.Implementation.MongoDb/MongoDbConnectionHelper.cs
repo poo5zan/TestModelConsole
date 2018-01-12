@@ -9,12 +9,12 @@ namespace TestModel.DataAccess.Implementation.MongoDb
 {
     public class MongoDbConnectionHelper
     {
-        protected static IMongoClient _client;
+        protected static IMongoClient _mongoClient;
         protected static IMongoDatabase _database;
-        public MongoDbConnectionHelper()
-        {
-            _client = new MongoClient();
-        }
+        //public MongoDbConnectionHelper()
+        //{
+        //    _mongoClient = new MongoClient();
+        //}
 
         //public void ConnectDatabase()
         //{
@@ -22,10 +22,22 @@ namespace TestModel.DataAccess.Implementation.MongoDb
         //  //  _database = _client.GetDatabase("pujan");
         //}
 
+        public IMongoClient GetMongoClientInstance(string host,int port = 27017)
+        {
+             _mongoClient = new MongoClient(new MongoClientSettings()
+            {
+                Server = new MongoServerAddress(host,port)
+            });
+            return _mongoClient;
+        }
+
         public IMongoDatabase GetDatabaseInstance(string databaseName)
         {
-            return _client.GetDatabase(databaseName);
+            return _mongoClient.GetDatabase(databaseName);
         }
+
+
+
 
     }
 }

@@ -10,6 +10,10 @@ namespace TestModel.Common
 {
     public static class PropertySupport
     {
+
+        // you don't need this approach anymore
+        //nameof(obj or property) will give you the Name
+
         public static string ExtractPropertyName<T>(Expression<Func<T>> propertyExpression)
         {
             if (propertyExpression == null)
