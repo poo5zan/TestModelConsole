@@ -18,7 +18,7 @@ namespace TestModel.Common.Tests
         [TestMethod]
         public void ReadExcel()
         {
-            string filePath = @"D:\readExcel\sample_excel.xlsx";
+            string filePath = @"D:\readExcel\some_data.xlsx";
             var dt = ReadExcelToDataTable(filePath);
             var columns = dt.Columns;
         }
@@ -41,7 +41,7 @@ namespace TestModel.Common.Tests
                 {
                     xssfWorkBook = new XSSFWorkbook(file);
                     sheetIndex = xssfWorkBook.ActiveSheetIndex;
-                    sheet = xssfWorkBook.GetSheetAt(sheetIndex);                    
+                    sheet = xssfWorkBook.GetSheetAt(sheetIndex);
                 }
                 else if (fileInfo.Extension == ".xls")
                 {
@@ -54,7 +54,7 @@ namespace TestModel.Common.Tests
                     throw new Exception("Not a valid Excel extension. Supported Extensions are xls and xlsx");
                 }
             }
-           
+
             return ConvertExcelSheetToDataTable(sheet);
         }
 
@@ -89,8 +89,41 @@ namespace TestModel.Common.Tests
                     int dtRowIndex = 0;
                     for (int columnIndex = row.FirstCellNum; columnIndex < row.LastCellNum; columnIndex++)
                     {
-                        string columnValue = row.GetCell(columnIndex)?.StringCellValue;
-                        dtRow[dtRowIndex] = columnValue;
+                        var cellValue = row.GetCell(columnIndex);
+                        object cellValueObj = null;
+                        if (cellValue == null)
+                        {
+                            dtRow[dtRowIndex] = cellValueObj;
+                            dtRowIndex++;
+                        }
+                        switch (cellValue.CellType)
+                        {
+                            case CellType.Unknown:                                
+                                break;
+                            case CellType.Numeric:
+                                cellValueObj = cellValue.NumericCellValue;
+                                break;
+                            case CellType.String:
+                                cellValueObj = cellValue.StringCellValue;
+                                break;
+                            case CellType.Formula:
+                                cellValueObj = cellValue.CellFormula;
+                                break;
+                            case CellType.Blank:
+                                cellValueObj = null;
+                                break;
+                            case CellType.Boolean:
+                                cellValueObj = cellValue.BooleanCellValue;
+                                break;
+                            case CellType.Error:
+                                cellValueObj = cellValue.ErrorCellValue;
+                                break;
+                            default:
+                                dtRow[dtRowIndex] = null;
+                                break;
+                        }
+                                                
+                        dtRow[dtRowIndex] = cellValueObj;
                         dtRowIndex++;
                     }
                     dt.Rows.Add(dtRow);
@@ -98,6 +131,6 @@ namespace TestModel.Common.Tests
             }
             return dt;
         }
-                
+
     }
 }
