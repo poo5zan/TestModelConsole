@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="DbObjectInputParameterAttributeTests.cs" />
     <Compile Include="EdiParserTests.cs" />
-    <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Extensions\DataTableExtensionsTests.cs" />
     <Compile Include="FeatureExtractionTests.cs" />
     <Compile Include="FileSplitterTests.cs" />
     <Compile Include="FluentFtpHelperTests.cs" />
