@@ -18,7 +18,7 @@ namespace TestModel.Common.Tests
         [TestMethod]
         public void ReadExcel()
         {
-            string filePath = @"D:\readExcel\some_data.xlsx";
+            string filePath = @"../../read_excel_files/random_data.xls";
             var dt = ReadExcelToDataTable(filePath);
             var columns = dt.Columns;
         }
@@ -95,6 +95,7 @@ namespace TestModel.Common.Tests
                         {
                             dtRow[dtRowIndex] = cellValueObj;
                             dtRowIndex++;
+                            continue;
                         }
                         switch (cellValue.CellType)
                         {
@@ -134,3 +135,7 @@ namespace TestModel.Common.Tests
 
     }
 }
+
+
+
+

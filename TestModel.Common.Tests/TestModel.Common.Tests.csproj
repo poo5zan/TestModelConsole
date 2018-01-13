@@ -75,7 +75,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DbObjectInputParameterAttributeTests.cs" />
     <Compile Include="EdiParserTests.cs" />
+    <Compile Include="Extensions\DataTableExtensions.cs" />
     <Compile Include="FeatureExtractionTests.cs" />
     <Compile Include="FileSplitterTests.cs" />
     <Compile Include="FluentFtpHelperTests.cs" />
@@ -99,6 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="read_excel_files\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

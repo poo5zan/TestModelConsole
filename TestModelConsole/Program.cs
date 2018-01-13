@@ -323,7 +323,7 @@ namespace TestModelConsole
                 typeof(TestModel.DataAccess.Implementation.SqlDatabase.UserDataAccess).Assembly));
             MefContainer.LoadMefContainer(catalog);
             //MefContainer.Container.ComposeParts(this);
-            MefContainer.Container.SatisfyImportsOnce(this);
+           // MefContainer.Container.SatisfyImportsOnce(this);
 
         }
     }
