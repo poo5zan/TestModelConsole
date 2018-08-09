@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModelConsole", "TestModelConsole\TestModelConsole.csproj", "{AFC3DB92-2EEA-43E0-8BE2-9510A0706300}"
 EndProject
@@ -70,6 +70,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiShopifyTests", "ApiShopify\ApiShopifyTests.csproj", "{481C424F-8A1E-4AA2-A674-DB03DFB81F91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModule.Ftp", "TestModule.Ftp\TestModule.Ftp.csproj", "{9FD98486-7DF9-4E0C-9953-D571134D999E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachineLearning", "MachineLearning", "{9629BA15-3E63-49D9-85F2-292576A01C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningServices", "MachineLearningServices\MachineLearningServices.csproj", "{67D35F78-294A-41DF-840F-B55F2D742FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningServicesTests", "MachineLearningServicesTests\MachineLearningServicesTests.csproj", "{40F074D8-7FA9-49DF-918E-290B72C0F343}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -175,6 +181,14 @@ Global
 		{9FD98486-7DF9-4E0C-9953-D571134D999E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD98486-7DF9-4E0C-9953-D571134D999E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD98486-7DF9-4E0C-9953-D571134D999E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D35F78-294A-41DF-840F-B55F2D742FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D35F78-294A-41DF-840F-B55F2D742FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D35F78-294A-41DF-840F-B55F2D742FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D35F78-294A-41DF-840F-B55F2D742FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,5 +214,10 @@ Global
 		{C0DFA3E2-6840-48EC-9C2B-2ED3805D25F9} = {E167F872-42D6-434F-997B-92CFE4DE0EF6}
 		{481C424F-8A1E-4AA2-A674-DB03DFB81F91} = {1486F2B6-6393-4E59-AB26-A99352B375DC}
 		{9FD98486-7DF9-4E0C-9953-D571134D999E} = {68EA37F7-9A59-466E-99BC-0F285CF9A7C7}
+		{67D35F78-294A-41DF-840F-B55F2D742FD5} = {9629BA15-3E63-49D9-85F2-292576A01C94}
+		{40F074D8-7FA9-49DF-918E-290B72C0F343} = {9629BA15-3E63-49D9-85F2-292576A01C94}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A09FF8C5-1DD3-44F9-A513-B4CC99831BEA}
 	EndGlobalSection
 EndGlobal

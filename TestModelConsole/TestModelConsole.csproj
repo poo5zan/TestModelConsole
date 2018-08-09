@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttemptedQuestion.cs" />
+    <Compile Include="DateExtensions.cs" />
     <Compile Include="DownloadFiles.cs" />
     <Compile Include="IUserManagement.cs" />
     <Compile Include="MyLinkedList.cs" />
