@@ -73,9 +73,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModule.Ftp", "TestModul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachineLearning", "MachineLearning", "{9629BA15-3E63-49D9-85F2-292576A01C94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningServices", "MachineLearningServices\MachineLearningServices.csproj", "{67D35F78-294A-41DF-840F-B55F2D742FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MachineLearningServices", "MachineLearningServices\MachineLearningServices.csproj", "{67D35F78-294A-41DF-840F-B55F2D742FD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningServicesTests", "MachineLearningServicesTests\MachineLearningServicesTests.csproj", "{40F074D8-7FA9-49DF-918E-290B72C0F343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MachineLearningServicesTests", "MachineLearningServicesTests\MachineLearningServicesTests.csproj", "{40F074D8-7FA9-49DF-918E-290B72C0F343}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroServices", "MicroServices", "{E9C69C99-0F3D-4CBD-A74F-9259392F2300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseMicroService", "BaseMicroService\BaseMicroService.csproj", "{FCCB3B0A-B95B-4834-8430-D3063F011F31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -189,6 +193,10 @@ Global
 		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40F074D8-7FA9-49DF-918E-290B72C0F343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCB3B0A-B95B-4834-8430-D3063F011F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCB3B0A-B95B-4834-8430-D3063F011F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCB3B0A-B95B-4834-8430-D3063F011F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCB3B0A-B95B-4834-8430-D3063F011F31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -216,6 +224,7 @@ Global
 		{9FD98486-7DF9-4E0C-9953-D571134D999E} = {68EA37F7-9A59-466E-99BC-0F285CF9A7C7}
 		{67D35F78-294A-41DF-840F-B55F2D742FD5} = {9629BA15-3E63-49D9-85F2-292576A01C94}
 		{40F074D8-7FA9-49DF-918E-290B72C0F343} = {9629BA15-3E63-49D9-85F2-292576A01C94}
+		{FCCB3B0A-B95B-4834-8430-D3063F011F31} = {E9C69C99-0F3D-4CBD-A74F-9259392F2300}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A09FF8C5-1DD3-44F9-A513-B4CC99831BEA}
